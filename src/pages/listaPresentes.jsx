@@ -53,14 +53,7 @@ function ListaPresentes() {
           ))}
         </div>
       </div>
-      <style jsx>{`
-        @media (max-width: 768px) {
-          div {
-            grid-template-columns: 1fr ; 
-          }
-        }
-      `}</style>
-    </>
+         </>
   );
 }
 
