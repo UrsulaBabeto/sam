@@ -3,11 +3,9 @@ import Cerimonia from "./pages/cerimonia";
 import Home from "./pages/mainPage";
 import MensagemNoivos from "./pages/msgnoivos";
 import SobreNos from "./pages/sobreNos";
-import ConfirmarPresença from "./pages/confirmarPresenca";
-
+import ConfirmarPresenca from "./pages/confirmarPresenca";
 import ListaPresentes from "./pages/listaPresentes";
 import Cart from "./pages/cart";
-import ConfirmarPresenca from "./pages/confirmarPresenca";
 
 function App() {
   return (
