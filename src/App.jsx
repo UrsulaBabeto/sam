@@ -7,6 +7,7 @@ import ConfirmarPresença from "./pages/confirmarPresenca";
 
 import ListaPresentes from "./pages/listaPresentes";
 import Cart from "./pages/cart";
+import ConfirmarPresenca from "./pages/confirmarPresenca";
 
 function App() {
   return (
@@ -14,11 +15,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="confirmar-presença" element={<ConfirmarPresença />} />
-          <Route path="lista-presentes" element={<ListaPresentes />} />
-          <Route path="mensagem-noivos" element={<MensagemNoivos />} />
-          <Route path="cerimonia" element={<Cerimonia />} />
-          <Route path="sobre-nos" element={<SobreNos />} />
+          <Route path="/confirmar-presenca" element={<ConfirmarPresenca />} />
+          <Route path="/lista-presentes" element={<ListaPresentes />} />
+          <Route path="/mensagem-noivos" element={<MensagemNoivos />} />
+          <Route path="/cerimonia" element={<Cerimonia />} />
+          <Route path="/sobre-nos" element={<SobreNos />} />
           {/*   <Route path="carrinho" element={<Cart />} /> */}
         </Routes>
       </Router>

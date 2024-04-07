@@ -10,8 +10,8 @@ import {
   Container,
   Button,
   MenuItem,
-} from "@mui/material/Box";
-import { useHistory } from "react-router-dom";
+} from "@mui/material";
+import { Link } from "react-router-dom";
 
 const pages = [
   {
@@ -24,7 +24,7 @@ const pages = [
   },
   {
     page: "Confirmar presença",
-    link: "/confirmar-presença",
+    link: "/confirmar-presenca",
   },
   {
     page: "Cerimônia",
@@ -37,7 +37,6 @@ const pages = [
 ];
 
 function Navbar() {
-  const history = useHistory();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -45,9 +44,7 @@ function Navbar() {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = (link) => {
-    history.push(link);
-
+  const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
@@ -63,19 +60,19 @@ function Navbar() {
         height: "80px",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
           <Typography
             variant="span"
             noWrap
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "inter",
-              fontWeight: 500,
-              color: "#f0abfc",
-              textAlign: "center",
-            }}
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "inter",
+                fontWeight: 500,
+                color: "#f0abfc",
+                textAlign: "center",
+              }} 
           >
             {" "}
             15.12.2024 <br />
@@ -84,17 +81,18 @@ function Navbar() {
           <Typography
             variant="h3"
             noWrap
-            component="a"
-            href="#"
-            sx={{
-              ml: 20,
+            component={Link}
+            to="/"
+             sx={{
+              ml:5,
               display: { xs: "none", md: "flex" },
+              textAlign:"center",
               fontFamily: "inter",
               fontWeight: 700,
-              color: "#fdf4ff",
+              color: "#f5e0fa",
               textDecoration: "none",
-              textShadow: "0 .5px 2px #475569",
-            }}
+              textShadow: "0 .5px 2px #eeb3f8",
+            }} 
           >
             Samuel & Anna
           </Typography>
@@ -105,7 +103,7 @@ function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="#64748b"
+              sx={{color:"#d946ef",mt:2,}}
             >
               <MenuIcon />
             </IconButton>
@@ -113,13 +111,13 @@ function Navbar() {
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
+                vertical: "center",
+                horizontal: "center",
               }}
               keepMounted
               transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
+                vertical: "center",
+                horizontal: "center",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
@@ -128,28 +126,29 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" sx={{ color: "#334155" }}>
-                    {page}
-                  </Typography>
+                <MenuItem key={page.link} onClick={handleCloseNavMenu}>
+                  <Link to={page.link} style={{ textDecoration: "none" }}>
+                    <Typography textAlign="center" sx={{ color: "#d946ef",  }}>
+                      {page.page}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
 
           <Typography
-            variant="h5"
+            variant="h4"
             noWrap
-            component="a"
-            href="/"
+            component={Link}
+            to="/"
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
+              mt:2,
               fontFamily: "inter",
               fontWeight: 700,
-              letterSpacing: ".08rem",
-              color: "#fdf4ff",
+              color: "#f5e0fa",
               textDecoration: "none",
               textShadow: "1px 1.5px 4px #d946ef",
             }}
@@ -167,11 +166,13 @@ function Navbar() {
           >
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.page}
+                component={Link}
+                to={page.link}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "#f0abfc" }}
+                sx={{ my: 3, color: "#f0abfc" }}
               >
-                {page}
+                {page.page}
               </Button>
             ))}
           </Box>
@@ -193,8 +194,10 @@ function Navbar() {
               onClose={handleCloseUserMenu}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseUserMenu(page.link)}>
-                  <Typography textAlign="center">{page.page}</Typography>
+                <MenuItem key={page.page} onClick={handleCloseUserMenu}>
+                  <Link to={page.link} style={{ textDecoration: "none" }}>
+                    <Typography textAlign="center">{page.page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -204,4 +207,5 @@ function Navbar() {
     </AppBar>
   );
 }
+
 export default Navbar;

@@ -5,9 +5,11 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Container, Link } from "@mui/material";
+import Navbar from "../components/Navbar";
 function Cerimonia() {
   return (
     <>
+    <Navbar/>
      <Typography
           sx={{ color: "#4a044e",textAlign:"center", margin:"50px 0" }}
           gutterBottom
@@ -17,9 +19,9 @@ function Cerimonia() {
         Cerimônia
       </Typography>
       <Container
-        sx={{
-           margin:"0 auto 30px auto", 
-          display:{ xs:"block", md:"flex"},
+        sx={{           
+          display:"flex",
+          flexDirection:{ xs:"column", md:"row"},
           justifyContent: {xs:"center", md:"space-evenly"},
           alignItems: "center",
         }}

@@ -1,9 +1,9 @@
-import { Typography } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import CardComponent from "../components/card";
+import Navbar from "../components/Navbar";
 
 function ListaPresentes() {
   const presentes = [
-    
     {
       price: "R$ 75",
       img: "https://cdn.pixabay.com/photo/2016/10/18/21/22/beach-1751455_1280.jpg",
@@ -77,41 +77,53 @@ function ListaPresentes() {
   ];
 
   return (
-    <div style={{ textAlign: "center", padding: "30px" }}>
-       <Typography
-          sx={{ color: "#4a044e", margin:"50px 0" }}
+    <>
+      <Navbar />
+      <div style={{ textAlign: "center", padding: "30px" }}>
+        <Typography
+          sx={{ color: "#4a044e", margin: "50px 0" }}
           gutterBottom
           variant="h3"
           component="div"
-        >  Lista de Presentes
-      </Typography>
-      <div
-        style={{
-          maxWidth: "1200px",
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-          gap: "20px",
-        }}
-      >
-         <CardComponent
-            title="Montando o ninho de amor"
-            image="https://m.media-amazon.com/images/I/81nGg+JGoBL._AC_SL1500_.jpg"
-            price="Nossa Casa"
-            key="Lista de Presentes"
-            buttonName="Acessar Site"
-          />
-        {presentes.map((e) => (
-          <CardComponent
-            title={e.title}
-            image={e.img}
-            price={e.price}
-            key={e.title}
-            buttonName="Adicionar"
-          />
-        ))}
+        >
+          {" "}
+          Lista de Presentes
+        </Typography>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr 1fr",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "20px",
+          }}
+        >
+          {" "}
+          <a
+            style={{ textDecoration: "none" }}
+            target="blank"
+            href="https://www.casasbahia.com.br/site-oficial-casas-bahia/b"
+          >
+            <CardComponent
+              title="Montando o ninho de amor"
+              image="https://img.freepik.com/fotos-gratis/pessoa-segurando-ninho-com-brilhante-ovo-pascoa_23-2148072870.jpg?w=740"
+              price="Nossa Casa"
+              key="Lista de Presentes"
+              buttonName="Acessar Site"
+            ></CardComponent>
+          </a>
+          {presentes.map((e) => (
+            <CardComponent
+              title={e.title}
+              image={e.img}
+              price={e.price}
+              key={e.title}
+              buttonName="Adicionar"
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -2,10 +2,12 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import { Container, Typography } from "@mui/material";
+import Navbar from "../components/Navbar";
 
 function SobreNos() {
   return (
     <>
+    <Navbar/>
       <div
         style={{
           display: "flex",

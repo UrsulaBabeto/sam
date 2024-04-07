@@ -1,10 +1,10 @@
 import { Typography } from "@mui/material";
-import Navbar from "../components/Navbar";
+ import Navbar from "../components/Navbar"; 
 import { BsBalloonHeart } from "react-icons/bs";
 function Home() {
   return (
     <>
-      <Navbar />
+     <Navbar />
       <div>
         <img src="./aliancas.jpg" style={{ width: "100%" }} alt="" />
       </div>
@@ -16,7 +16,6 @@ function Home() {
           alignItems: "center",
           fontFamily: "inter",
           margin: "20px",
-          display: "flex",
           flexDirection: "column",
           gap: "20px",
           color: "#4a044e",
@@ -28,10 +27,10 @@ function Home() {
           variant="h2"
           component="div"
         >
-          Sejam Bem-vindos ao nosso site
+          Bem-vindos
         </Typography>
         <Typography
-          sx={{ color: "#86198f", fontStyle: "italic" }}
+          sx={{ color: "#86198f", fontStyle: "italic", textAlign:"center" }}
           variant="h6"
           component="div"
         >

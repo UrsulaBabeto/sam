@@ -1,10 +1,11 @@
 import { Button, FormControl, Stack, TextField, Typography } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+/* fIconz */
 import { BsBalloonHeart } from "react-icons/bs";
+import Navbar from "../components/Navbar";
 function MensagemNoivos() {
   return (
     <>
-     
+    <Navbar/> 
      <Typography
           sx={{ color: "#4a044e", textAlign:"center" }}
           gutterBottom
@@ -56,7 +57,7 @@ function MensagemNoivos() {
             size="large"
             sx={{width: {
               xs: "100%", md:"40%"},alignSelf:"center"}}
-            endIcon={<SendIcon />}
+            /* endIcon={<SendIcon />} */
           >
             Enviar
           </Button>

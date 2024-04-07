@@ -10,10 +10,12 @@ import {
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import CancelIcon from "@mui/icons-material/Cancel";
+import Navbar from "../components/Navbar";
 
-function ConfirmarPresença() {
+function ConfirmarPresenca() {
   return (
     <>
+    <Navbar/>
       <Typography
         sx={{ color: "#4a044e", textAlign: "center", margin: "50px 0" }}
         gutterBottom
@@ -102,4 +104,4 @@ function ConfirmarPresença() {
   );
 }
 
-export default ConfirmarPresença;
+export default ConfirmarPresenca;
