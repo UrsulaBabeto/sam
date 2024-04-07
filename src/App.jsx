@@ -18,7 +18,7 @@ function App() {
           <Route path="/mensagem-noivos" element={<MensagemNoivos />} />
           <Route path="/cerimonia" element={<Cerimonia />} />
           <Route path="/sobre-nos" element={<SobreNos />} />
-          {/*   <Route path="carrinho" element={<Cart />} /> */}
+            <Route path="carrinho" element={<Cart />} />
         </Routes>
       </Router>
     </>
