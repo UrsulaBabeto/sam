@@ -6,12 +6,15 @@ function MensagemNoivos() {
   return (
     <>
     <Navbar/> 
-     <Typography
-          sx={{ color: "#4a044e", textAlign:"center" }}
+    <div style={{ textAlign: "center", padding: "30px" }}>
+        <Typography
+          sx={{ color: "#4a044e", margin: "50px 0" }}
           gutterBottom
           variant="h3"
           component="div"
-        >  Deixe aqui a sua mensagem
+        >
+          {" "}
+       Deixe aqui a sua mensagem
       </Typography>
       <Typography
           sx={{ color: "#86198f", fontStyle: "italic", textAlign:"center", margin:"50px 10px" }}
@@ -63,6 +66,7 @@ function MensagemNoivos() {
           </Button>
         </Stack>
       </form>
+      </div>
     </>
   );
 }

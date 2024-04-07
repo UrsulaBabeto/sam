@@ -1,11 +1,10 @@
-import { Link, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import CardComponent from "../components/card";
 import Navbar from "../components/Navbar";
 import listaPresentes from "../Utils/listaPresentes.json"
-import { useState } from "react";
 
 function ListaPresentes() {
-  const [presentes, setPresentes] = useState(listaPresentes);
+  const presentes = listaPresentes;
 
   return (
     <>
@@ -17,7 +16,6 @@ function ListaPresentes() {
           variant="h3"
           component="div"
         >
-          {" "}
           Lista de Presentes
         </Typography>
         <div
@@ -55,6 +53,13 @@ function ListaPresentes() {
           ))}
         </div>
       </div>
+      <style jsx>{`
+        @media (max-width: 768px) {
+          div {
+            grid-template-columns: 1fr ; 
+          }
+        }
+      `}</style>
     </>
   );
 }
